@@ -1,0 +1,37 @@
+Exercise 2.2.2
+
+The following expressions contain type errors.  What are the errors and how
+might we fix them?
+
+(a) ceil(4)
+    'ceil' is defined for 'real' operands only.  Try 'ceil(4.0)'.
+
+(b) if true then 5+6 else 7.0
+    The two branches of the 'if-then-else' do not agree on their types.  There
+    are two possible solutions: 'if true then real(5+6) else 7.0' and 'if true
+    then 5+6 else floor(7.0)'.
+
+(c) chr(256)
+    'chr' is only defined for the range [0, 256).  The intent of 'chr(256)' is
+    unclear and there is no real solution without additional context.
+
+(d) chr(~1)
+    'chr' is only defined for the range [0, 256).  The intent of 'chr(~1)' is
+    unclear and there is no real solution without additional context.
+
+(e) ord(3)
+    'ord' is only defined for 'char's.  The intent is unclear, though possibly
+    the user meant 'chr(3)'.
+
+(f) chr(#"a")
+    'chr' is only defined for 'int's.  The intent is unclear, though possibly
+    the user meant 'ord(#"a")'.
+
+(g) if 0 then 1 else 2
+    The expression following 'if' must be of type 'boolean'.  'if false then 1
+    else 2' is likely the intention.
+
+(h) ord("a")
+    'ord' is only defined for 'char' not 'string'.  The user likely meant
+    'ord(#"a")'.
+
