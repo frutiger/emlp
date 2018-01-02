@@ -1,0 +1,16 @@
+Exercise 2.3.2
+
+Show the effect on the environment of making the following sequence of val-
+declarations.  Which variables are now accessible?
+
+val a = 3;
+val b = 98.6;
+val a = "three";
+val c = a^str(chr(floor(b)));
+
+c := "threeb"
+a := "three"
+b := 98.6
+a := 3
+
+The 'val a = 3' is no longer accessible.

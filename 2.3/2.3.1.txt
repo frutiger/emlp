@@ -1,0 +1,31 @@
+Exercise 2.3.1
+
+Tell whether each of the following character strings is (i) an alphanumeric
+identifier suitable for ordinary (i.e. nontype) values, (ii) a symbolic
+identifier, (iii) an identifier that must represent a type as a value, or (iv)
+not an identifier of ML.
+
+(a) The7Dwarves
+    (i) an alphanumeric identifier suitable for ordinary (i.e. nontype) values
+
+(b) 7Dwarves
+    (iv) not an identifier of ML
+
+(c) SevenDwarves,The
+    (iv) not an identifier of ML
+
+(d) 'SnowWhite'
+    (iii) an identifier that must represent a type as a value
+
+(e) a<=b
+    (iv) not an identifier of ML
+
+(f) hurrah!
+    (iv) not an identifier of ML
+
+(g) #1
+    (iv) not an identifier of ML
+
+(h) '123
+    (iii) an identifier that must represent a type as a value
+
