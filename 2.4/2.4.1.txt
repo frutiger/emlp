@@ -1,0 +1,28 @@
+Exercise 2.4.1
+
+What are the values of the following expressions?
+
+(a) #2(3, 4, 5)
+    4
+
+(b) hd([3, 4, 5])
+    3
+
+(c) tl([3, 4, 5])
+    [4, 5]
+
+(d) explode("foo")
+    [#"f", #"o", #"o"]
+
+(e) implode([#"f", #"o", #"o"])
+    "foo"
+
+(f) "c"::["a", "t"]
+    ["c", "a", "t"]
+
+(g) ["c", "o"]@["b", "o", "l"]
+    ["c", "o", "b", "o", "l"]
+
+(h) concat(["c", "a", "t"])
+    "cat"
+

@@ -1,0 +1,23 @@
+Exercise 2.4.5
+
+Give examples of appropriate values for each of the following type expressions.
+Do not use the empty list as the value for any list component.
+
+(a) int list list list
+    [[[1]], [[1]], [[1]]]
+
+(b) (int * char) list
+    [(1, #"a"), (2, #"b")]
+
+(c) string list * (int * (real * string)) * int
+    (["a"], (5, (4.0, "b")), 6)
+
+(d) ((int * int) * (bool list) * real) * (real * string)
+    (((1, 2), [true], 5.0), (6.0, "hello"))
+
+(e) (bool * int) * char
+    ((true, 5), #"a")
+
+(f) real * int list list list list
+    (5.0, [[[[1]]]])
+

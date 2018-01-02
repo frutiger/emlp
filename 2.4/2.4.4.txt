@@ -1,0 +1,8 @@
+Exercise 2.4.4
+
+Are (1, 2) and (1, 2, 3) the same type?  Are [1, 2] and [1, 2, 3] the same
+type?
+
+'(1, 2) : int * int' and '(1, 2, 3) : int * int * int' are not the same type.
+'[1, 2] : int list' and '[1, 2, 3] : int list' are the same type.
+

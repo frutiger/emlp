@@ -1,0 +1,16 @@
+Exercise 2.4.3
+
+Give the types of the following expressions.
+
+(a) (1.5, "3", (4, 5))
+    real * string * (int * int)
+
+(b) [[1, 2], nil, [3]]
+    int list list
+
+(c) [(2, 3.5), (4, 5.5), (6, 7.5)]
+    (int * int) list
+
+(d) ([#"a", #"b"], nil, [1, 2, 3])
+    char list * 'a list * int list
+

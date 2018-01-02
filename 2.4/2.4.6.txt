@@ -1,0 +1,9 @@
+Exercise 2.4.6
+
+Using two of the operators we have learned in this section ['#i' where i is a
+positive integer, 'hd', 'tl', '@', '::', 'explode', 'implode'], it is possible to
+convert a string of length one into the character of that string.  Show how to
+accomplish this transformation.
+
+hd(explode("f"))
+

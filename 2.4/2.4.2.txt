@@ -1,0 +1,39 @@
+Exercise 2.4.2
+
+What is wrong with each of the following expressions?  If possible, suggest an
+appropriate correction.
+
+(a) #4(3, 4, 5)
+    The specified tuple '(3, 4, 5)' does not have a 4th element.  The user's
+    intent is unclear without additional context.
+
+(b) hd([])
+    The specified list '[]' does not have a head as it is an empty list.  The
+    user's intent is unclear without additional context.
+
+(c) #1(1)
+    The specified argument is an int not a tuple.  The user's intent is unclear
+    without additional context.
+
+(d) explode(["bar"])
+    'explode' expects a 'string' not a 'string list'.  Possible correction:
+    'explode("bar")'.
+
+(e) implode(#"a", #"b")
+    'implode' expects a 'char list' not a 'char * char'.  Possible correction:
+    'implode([#"a", #"b"]).
+
+(f) ["r"]::["a", "t"]
+    The '::' operator expects "('a * 'a list)" not "('a list * 'a list)".
+    Possible correction: '"r"::["a", "t"]'.
+
+(g) tl([])
+    The empty list has no tail.  Possible correction: 'nil'.
+
+(h) 1@2
+    The '@' operator is defined for "('a list * 'a list)" not "('a * 'a)".
+    Possible corrections: '1::[2]' or '[1]@[2]'.
+
+(i) concat([#"a", #"b"])
+    'concat' is defined for 'string list' not '(char * char)'.  Possible
+    corrections: 'implode([#"a", #"b"])' or 'concat(["a", "b"])'.
