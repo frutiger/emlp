@@ -1,0 +1,35 @@
+Exercise 2.1.2
+
+The following ML "expressions" have errors in them.  Explain what is wrong with
+each.
+
+(a) 8/4
+    The '/' operator is only specified for 'real' arguments, the intent was
+    probably 'div'.
+
+(b) if 2<3 then 4
+    There is no 'else' portion.
+
+(c) 1<2 and 5>3
+    'and' is 'not' an operator for 'bool', the intent was probably 'andalso'.
+
+(d) 6+7 DIV 2
+    'DIV' is not an operator bound to any name, the intent was probably 'div'.
+
+(e) 4.+3.5
+    '4.' does not parse to a valid expression, the intent was probably '4.0'.
+
+(f) 1.0<2.0 or 3>4
+    'and' is 'not' an operator for 'bool', the intent was probably 'orelse'.
+
+(g) #"a"^#"b"
+    '^' is not an operator 'char'.
+
+(h) 123.
+    There is a trailing '.', the intent was either '123 : int' or '123.0 :
+    real'.
+
+(i) 1.0 = 2.0
+    The '=' operator is not defined for 'real' operands, the intent was
+    probably a fuzzy comparison.
+

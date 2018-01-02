@@ -1,0 +1,17 @@
+Exercise 2.1.3
+
+Write a string that when printed creates the displayed text on lines (3)-(5) of
+Example 2.6 [1].  You may assume that the indentation of the lines is made by a
+single tab character.  Your string should be written over several lines so that
+there are no more than 80 characters appearing on any one line.
+
+[1] The lines follow:
+"\\\" stands for the double-quote character, \
+\which otherwise would be interpreted \
+\as the string ender."
+
+The solution follows.
+"\"\\\\\\\" stands for the double-quote character, \\\n\
+\\\which otherwise would be interted \\\n\
+\\\as the string ender.\""
+

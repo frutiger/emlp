@@ -1,0 +1,7 @@
+Exercise 2.1.4
+
+Express: (a) E orelse F (b) E andalso F as if-then-else expressions.
+
+(a) if E then E else F
+
+(b) if E then F else false

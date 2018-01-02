@@ -1,0 +1,28 @@
+Exercise 2.1.1
+
+What is the response of ML to the following expressions?
+
+(a) 1+2*3
+    val it = 7 : int
+
+(b) 5.0-4.2/1.4
+    val it = 2.0 : real
+
+(c) 11 div 2 mod 3
+    val it = 2 : int
+
+(d) "foo"^"bar"^""
+    val it = "foobar" : string
+
+(e) 3>4 orelse 5<6 andalso not (7<>8)
+    val it = false : bool
+
+(f) if 6<10 then 6.0 else 10.0
+    val it = 6.0 : real
+
+(g) 0XAB+123
+    val it = 294 : int
+
+(h) 0xab<123
+    val it = false : bool
+
