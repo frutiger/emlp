@@ -1,0 +1,23 @@
+Exercise 3.2.2
+
+In the following function definition
+    fun foo(a, b, c, d) =
+        if a = b then c + 1 else
+            if a > b then c else b + d
+it is possible to deduce that a, b, c, and d are all integers.  Explain how ML
+makes these deductions.
+
+1. Since '1' is an integer, then for the expression 'c + 1' to be valid, 'c'
+   must be an integer.
+
+2. Since 'c' is an integer due to (1), then for the expression 'if a > b then c
+   else b + d' to be valid, 'c' and 'b + d' must be the same type, i.e.
+   integers.
+
+3. Since 'b + d' is an integer, then 'b' and 'd' must be integers.
+
+4. Since 'b' is an integer, then for the expression 'a = b' to be valid, 'a'
+   must be an integer.
+
+Therefore all of a, b, c, and d must be integers.
+

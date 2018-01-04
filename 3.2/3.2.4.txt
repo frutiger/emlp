@@ -1,0 +1,24 @@
+Exercise 3.2.4
+
+Consider the factorial function 'fact' described in Exercise 3.2.1(a); if you
+have not written this function, use the published solution.  Describe the
+changes to the environment that occur as a result of a call to fact(4).
+
+For easy of reference, the 'fact' function is reproduced below.
+
+    fun fact(n) = if n = 1 then 1 else n * fact(n - 1);
+
+At its largest, the environment looks as follows:
+
+    n := 1
+    fact(1)
+    n := 2
+    fact(2)
+    n := 3
+    fact(3)
+    n := 4
+    fact(4)
+    fact
+
+And then as the functions complete, these values are removed from the top down.
+

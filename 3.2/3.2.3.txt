@@ -1,0 +1,32 @@
+Exercise 3.2.3
+
+Suppose we define a function f by a statement that begins
+    fun f(a:int, b, c, d, e) = ...
+
+Tell what can be inferred about the types b, c, d, and/or e if the body of the
+function is each of the following if-then-else statements:
+
+(a) if a < b + c then d else e
+    b, c are integers, d and e are equal but unknown types.
+
+(b) if a < b then c else d
+    b is an integer, c and d are equal but unknown types and e is an unknown
+    type.
+
+(c) if a < b then b + c else d + e
+    b, c, d and e are all integers.
+
+(d) if a < b then b < c else d
+    b and c are integers, d is a bool.
+
+(e) if b < c then a else c + d
+    b, c, d and e are all integers.
+
+(f) if b < c then d else e
+    b and c are equal and comparable but unknown types.  d and e are equal but
+    unknown types.
+
+(g) if b < c then d + e else d * e
+    b and c are equal and comparable but unknown types.  d and e are either
+    both integers or both reals.
+
