@@ -1,0 +1,27 @@
+Exercise 3.3.4
+
+Show the sequence of calls to sumLists (as defined in Fig. 3.14) and the
+bindings to patterns that occur when we call
+
+    sumLists([[1, 2], nil, [3]]);
+
+For reference, the definition of 'sumLists' from Fig. 3.14 is as follows.
+
+    fun sumLists(nil)         = 0
+      | sumLists(nil::ys)     = sumLists(ys)
+      | sumLists((x::xs)::ys) = x + sumLists(xs::ys)
+
+    sumLists([[1, 2], nil, [3]])
+ -> sumLists((1::[2])::[nil, [3]])
+ -> 1 + sumLists([[2], nil, [3]])
+ -> 1 + sumLists((2::nil)::[nil, [3]])
+ -> 3 + sumLists(nil::[nil, [3]])
+ -> 3 + sumLists([nil, [3]])
+ -> 3 + sumLists(nil::[[3]])
+ -> 3 + sumLists([[3]])
+ -> 3 + sumLists((3::nil)::nil)
+ -> 6 + sumLists(nil::nil)
+ -> 6 + sumLists(nil)
+ -> 6 + 0
+ -> 6
+

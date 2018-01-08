@@ -1,0 +1,22 @@
+Exercise 3.3.5
+
+Does the pattern of Fig. 3.15(a) match the following expressions?  If so give
+the value bindings for each of the variables, x, y, zs, and w.
+
+For reference, the pattern is constructed from (x::y::zs, w).
+
+(a) (["a", "b", "c"], ["d", "e"])
+    x  = "a"
+    y  = "b"
+    zs = ["c"]
+    w  = ["d", "e"]
+
+(b) (["a", "b"], 4.5)
+    x  = "a"
+    y  = "b"
+    zs = nil
+    w  = 4.5
+
+(c) ([5], [6, 7])
+    No - too many values to unpack from [5] to x::y::zs.
+

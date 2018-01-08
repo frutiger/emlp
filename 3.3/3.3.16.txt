@@ -1,0 +1,17 @@
+Exercise 3.3.16
+
+Explain how ML deduces that the function sumPairs of Example 3.18 has domain
+type (int * int) list.
+
+For reference, Example 3.18 is reproduced below.
+
+    fun sumPairs(nil)        = 0
+      | sumPairs((x, y)::zs) = x + y + sumPairs(zs);
+
+For the expression 'x + y + sumPairs(zs)' to be valid, 'x', 'y' and
+'sumPairs(zs)' must be all of type int. 
+
+Therefore, the expression '(x, y)' must be of type '(int * int)'.
+
+Therefore, the expression '(x, y)::zs' must be of type '(int * int) list'.
+

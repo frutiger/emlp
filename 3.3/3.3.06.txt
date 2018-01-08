@@ -1,0 +1,20 @@
+Exercise 3.3.6
+
+Draw trees as in Fig. 3.15 to show how the pattern
+
+    [(x, y), zs]
+
+matches the expression [((1, 2), 3)]
+
+
+        ::                      ::
+       /  \                    /  \
+     (,)  zs                 (,)  nil
+    /   \                   /   \
+   x     y                (,)    3
+                         /   \
+                        1     2
+
+x  = (1, 2)
+y  = 3
+zs = nil
