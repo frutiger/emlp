@@ -34,8 +34,8 @@ the argument is less than 1. *)
 (f) Compute the largest element of list of reals [sic].  Your function need not
     behave well if the list is empty. *)
     fun maxReal2(x : real, y) = if x > y then x else y;
-    fun largestReal1(largest, xs) = if null(xs)
+    fun maxRealList1(largest, xs) = if null(xs)
                                     then largest
-                                    else largestReal1(maxReal2(hd(xs), largest), tl(xs));
-    fun largestReal(xs) = largestReal1(hd(xs), tl(xs));
+                                    else maxRealList1(maxReal2(hd(xs), largest), tl(xs));
+    fun maxRealList(xs) = maxRealList1(hd(xs), tl(xs));
 
