@@ -1,0 +1,22 @@
+Exercise 4.1.1
+
+If we were to change line (1) of Fig. 4.2 to
+
+  fun printList(nil) = 0
+
+and leave the rest of printList as it is, would there be a type error in the
+function printList?
+
+Fig 4.2 follows.
+
+fun printList(nil) = ()
+  | printList(x::xs) = (
+        print(Int.toString(x));
+        print("\n");
+        printList(xs)
+    );
+
+There would not be a type error, since the basis case evaluates to an Int and
+the recursive case evaluates to a statement list, whose last item evaluates to
+an Int.
+
