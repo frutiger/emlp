@@ -1,0 +1,54 @@
+Exercise 4.2.2
+
+Suppose we have a file with the following characters:
+
+abc
+de
+f
+
+Suppose the file has been opened for reading and 'inFile' is a variable whose
+value is the instream for this file.  Tell what happens if the following
+commands are executed repeatedly.
+
+(a) val x = input(inFile);
+    val x = "abc\nde\nf" : string
+    val x = "" : string
+    val x = "" : string
+
+(b) val x = input1(inFile);
+    val x = SOME #"a" : char option
+    val x = SOME #"b" : char option
+    val x = SOME #"c" : char option
+    val x = SOME #"\n" : char option
+    val x = SOME #"d" : char option
+    val x = SOME #"e" : char option
+    val x = SOME #"\n" : char option
+    val x = SOME #"f" : char option
+    val x = NONE : char option
+    val x = NONE : char option
+
+(c) val x = inputN(inFile, 2);
+    val x = "ab" : string
+    val x = "c\n" : string
+    val x = "de" : string
+    val x = "\nf" : string
+    val x = "" : string
+    val x = "" : string
+
+(d) val x = inputN(inFile, 5);
+    val x = "abc\nd" : string
+    val x = "e\nf" : string
+    val x = "" : string
+    val x = "" : string
+
+(e) val x = inputLine(inFile);
+    val x = "abc\n" : string
+    val x = "de\n" : string
+    val x = "f" : string
+    val x = "" : string
+    val x = "" : string
+
+(f) val x = lookahead(inFile);
+    val x = SOME #"a" : elem option
+    val x = SOME #"a" : elem option
+

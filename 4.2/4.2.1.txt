@@ -1,0 +1,26 @@
+Exercise 4.2.1
+
+Write expressions that will do the following:
+
+(a) Open file 'zap' for reading.
+    openIn("zap")
+
+(b) Close the file whose instream is 'in1'.
+    close(in1)
+
+(c) Read 5 characters from the instream 'in2'.
+    inputN(in2, 5)
+
+(d) Read a line of text from the instream 'in3'.
+    let val SOME line = inputLine(in3) in line end
+
+(e) Read the entire file from instream 'in4'.
+    inputAll(in4)
+
+(f) Find the first character waiting on standard input without consuming it.
+    let val SOME x = lookahead(stdIn) in x end
+
+(g) Find how many characters are presently waiting on standard input.
+    fun scan1(instream, NONE)   = 0
+      | scan1(instream, SOME _) = 1 + scan1(instream, input1(instream));
+    scan1(stdIn, input1(stdIn));

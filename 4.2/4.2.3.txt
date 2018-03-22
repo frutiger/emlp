@@ -1,0 +1,19 @@
+Exercise 4.2.3
+
+Give the types of the following expressions.
+
+(a) SOME ();
+    unit option
+
+(b) SOME 123;
+    int option
+
+(c) SOME NONE;
+    'a option option
+
+(d) fun f() = SOME true;
+    unit -> bool option
+
+(e) fun f(NONE) = 0 | f(SOME i) = i;
+    int option -> int
+
