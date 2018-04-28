@@ -40,37 +40,37 @@ Fig. 4.8 is reproduced below.
 
 open TextIO;
 
-fun outputTabs(f, 1) = output1(f, #"\t")
-  | outputTabs(f, n) = (output1(f, #"\t"); outputTabs(f, n-1));
+fun printTabs(1) = print("\t")
+  | printTabs(n) = (print("\t"); printTabs(n-1));
 
-fun outputNewline(f) = output1(f, #"\n");
+fun printNewline() = print("\n");
 
-fun outputMonth(f, "Jan") = output(f, "January")
-  | outputMonth(f, "Feb") = output(f, "February")
-  | outputMonth(f, "Mar") = output(f, "March")
-  | outputMonth(f, "Apr") = output(f, "April")
-  | outputMonth(f, "May") = output(f, "May")
-  | outputMonth(f, "Jun") = output(f, "June")
-  | outputMonth(f, "Jul") = output(f, "July")
-  | outputMonth(f, "Aug") = output(f, "August")
-  | outputMonth(f, "Sep") = output(f, "September")
-  | outputMonth(f, "Oct") = output(f, "October")
-  | outputMonth(f, "Nov") = output(f, "November")
-  | outputMonth(f, "Dec") = output(f, "December");
+fun printMonth("Jan") = print("January")
+  | printMonth("Feb") = print("February")
+  | printMonth("Mar") = print("March")
+  | printMonth("Apr") = print("April")
+  | printMonth("May") = print("May")
+  | printMonth("Jun") = print("June")
+  | printMonth("Jul") = print("July")
+  | printMonth("Aug") = print("August")
+  | printMonth("Sep") = print("September")
+  | printMonth("Oct") = print("October")
+  | printMonth("Nov") = print("November")
+  | printMonth("Dec") = print("December");
 
-fun outputTabbed(f, value) = (
-  output(f, value);
-  outputTabs(f, 1)
+fun printTabbed(value) = (
+  print(value);
+  printTabs(1)
 );
 
-fun outputDays(f) = (
-  outputTabbed(f, "Sun");
-  outputTabbed(f, "Mon");
-  outputTabbed(f, "Tue");
-  outputTabbed(f, "Wed");
-  outputTabbed(f, "Thu");
-  outputTabbed(f, "Fri");
-  outputTabbed(f, "Sat")
+fun printDays() = (
+  printTabbed("Sun");
+  printTabbed("Mon");
+  printTabbed("Tue");
+  printTabbed("Wed");
+  printTabbed("Thu");
+  printTabbed("Fri");
+  printTabbed("Sat")
 );
 
 fun dayOffset("Sun") = 0
@@ -81,29 +81,27 @@ fun dayOffset("Sun") = 0
   | dayOffset("Fri") = 5
   | dayOffset("Sat") = 6;
 
-fun outputDates(f, current, 0, offset) = ()
-  | outputDates(f, current, length, offset) = (
-  if offset mod 7 = 0 then outputNewline(f) else ();
+fun printDates(current, 0, offset) = ()
+  | printDates(current, length, offset) = (
+  if offset mod 7 = 0 then printNewline() else ();
   let
     val date = current + 1
   in
-    if date < 10 then output1(f, #" ") else ();
-    outputTabbed(f, Int.toString(date))
+    if date < 10 then print(" ") else ();
+    printTabbed(Int.toString(date))
   end;
-  outputDates(f, current+1, length-1, offset+1)
+  printDates(current+1, length-1, offset+1)
 );
 
-fun outputCal(f, month, day, length) = (
-  outputTabs(f, 3);
-  outputMonth(f, month); outputNewline(f); outputNewline(f);
-  outputDays(f);         outputNewline(f); outputNewline(f);
+fun printCal(month, day, length) = (
+  printTabs(3);
+  printMonth(month); printNewline(); printNewline();
+  printDays();       printNewline(); printNewline();
   let
     val offset = dayOffset(day)
   in (
-    outputTabs(f, offset);
-    outputDates(f, 0, length, offset)
-  ) end; outputNewline(f)
+    printTabs(offset);
+    printDates(0, length, offset)
+  ) end; printNewline()
 );
-
-fun printCal(month, day, length) = outputCal(stdOut, month, day, length);
 
