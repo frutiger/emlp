@@ -1,0 +1,16 @@
+Exercise 5.1.4
+
+Recall from Exercise 2.1.4 that expressions using orelse and andalso can be
+rewritten using if-then-else expressions.  We now find that if-then-else
+expressions can be rewritten as case expressions.  Write
+
+(a) E orelse F
+    case E
+    of true  => E
+     | false => F;
+
+(b) E andalso F
+    case E
+    of true  => F
+     | false => E
+
