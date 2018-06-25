@@ -1,0 +1,15 @@
+Exercise 5.2.5
+
+Consider the following function:
+
+  fun myFavoriteException("sally") = Div
+    | myFavoriteException("joe")   = Match;
+
+(a) What is the type of this function?
+    string -> exn
+
+(b) Both myFavoriteException("joe") and myFavoriteException("zzz") seem to
+    produce Match as the answer.  What is the diffierence between these two
+    calls?
+    The former returns an exception by value, the latter raises the exception.
+
