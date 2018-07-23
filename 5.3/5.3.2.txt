@@ -1,0 +1,17 @@
+Exercise 5.3.2
+
+We can restrict polymorphic types (type expressions with type variables) by:
+(i) equating type variables, (ii) replacing a type variable by a constant type,
+or (iii) replacing a type variable by a nonconstant expression.  Give an
+example of each kind of restriction for the following expressions:
+
+(a) 'a * 'b * int
+      (i) 'a = int
+     (ii) 'a * int * int
+    (iii) 'a * 5 * int
+
+(b) ('a list) * ('b list)
+      (i) 'a = int
+     (ii) (int list) * ('b list)
+    (iii) [5, 20] * ('b list)
+

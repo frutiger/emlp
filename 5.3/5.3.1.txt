@@ -1,0 +1,40 @@
+Exercise 5.3.1
+
+Let rev1 be the function of Fig 5.10(a) and rev2 the function of Fig 5.10(b).
+
+For convenience, Fig 5.10(a) is reproduced below:
+
+  fun rev1(L) = if L = nil then nil
+                else rev1(tl(L)) @ [hd(L)];
+
+For convenience, Fig 5.10(b) is reproduced below:
+
+  fun rev2(nil)   = nil
+    | rev2(x::xs) = rev2(xs) @ [x];
+
+What is the result of the following calls:
+
+(a) rev1([(rev1: int list -> int list), rev1])
+    Error: equality type required
+
+(b) rev2([(rev1: int list -> int list), rev1])
+    val it = [rev1, rev1] : (int list -> int list) list
+
+(c) rev1([rev1, rev1])
+    Error: equality type required
+
+(d) rev2([rev2, rev2])
+    Error: use of generalized type var in an expansive expression
+
+(e) rev1([chr, chr])
+    Error: equality type required
+
+(f) rev2([chr, chr])
+    val it = [chr, chr] : (int -> char) list
+
+(g) rev1([chr, ord])
+    Error: chr and ord not of same type
+
+(h) rev2([chr, ord])
+    Error: chr and ord not of same type
+

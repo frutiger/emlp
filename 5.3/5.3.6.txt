@@ -1,0 +1,9 @@
+Exercise 5.3.6
+
+If the ML runtime system applies the cons operator without looking at the
+elements of the list, how can it be sure the types of the head and tail are
+compatible?
+
+The types of the parameters supplied to the cons operator are known before the
+cons operator is applied at runtime.
+

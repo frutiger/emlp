@@ -1,0 +1,16 @@
+Exercise 5.3.4
+
+Tell whether or not each of the the following types are equality types:
+
+(a) int * string list
+    Yes, equality type
+
+(b) (int -> char) * string
+    No, not an equality type
+
+(c) int -> string -> unit
+    No, not an equality type
+
+(d) real * (string * string) list
+    No, not an equality type
+

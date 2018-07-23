@@ -1,0 +1,53 @@
+Exercise 5.3.7
+
+In Fig 5.12 there are three functions, f, g and h.  Function f takes any list
+and returns the list with the third and subsequent elements removed.  Function
+g applies f to a pair of arguments and returns the pair of results.  Function h
+computes a local value v by applying f to nil (which returns an empty list) and
+then conses the two arguments of h to v.
+
+Function f is reproduced below:
+
+  fun f(nil)      = nil
+    | f([x])      = [x]
+    | f(x::y::zs) = [x, y];
+
+Function g is reproduced below:
+
+  fun g(x, y) = (f(x), f(y));
+
+Function h is reproduced below:
+
+  fun h(x, y) = let val v = f(nil) in (x::v, y::v) end;
+
+For each of the expressions below, indicate if it is legal or not, and if not,
+what is the error:
+
+(a) g([1,2,3], ["a"])
+    This expression is legal.
+
+(b) g([1,2,3], nil)
+    This expression is not legal, a nongeneralized type variable (nil : 'a
+    list) was used in an expansive expression.
+
+(c) g([f,f], [1])
+    This expression is not legal, a nongeneralized type variable (f : 'a list
+    -> 'a list) was used in an expansive expression.
+
+(d) g([1], [1.0])
+    This expression is legal.
+
+(e) h(1, 2)
+    This expression is legal.
+
+(f) h(1, "a")
+    This expression is not legal, the types supplied to x::v (int -> int list)
+    cause an error in the types supplied to y::v (string -> int list).
+
+(g) h(nil, nil)
+    This expression is not legal, a nongeneralized type variable (nil : 'a
+    list) was used in an expansive expression.
+
+(h) h([1], nil)
+    This expression is legal.
+

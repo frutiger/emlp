@@ -1,0 +1,17 @@
+Exercise 5.3.5
+
+Let L have the value [(1,2),(3,4)], let M have the value (1,2) and N have the
+value (3,4).  Which of the following equality tests have the value true?
+
+(a) L = M::[N]
+    Yes, this has the true value.
+
+(b) M::N = L@[N]
+    No, this does not have the true value.
+
+(c) [(1,2)]@[N] = L@nil
+    Yes, this has the true value.
+
+(d) N::L = (3,4)::M::N::nil
+    Yes, this has the true value.
+

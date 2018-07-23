@@ -1,0 +1,17 @@
+Exercise 5.3.3
+
+Suppose f(x, y, z) is a function.  Give an example of a definition of f that
+would cause the argument of f to have each of the following types:
+
+(a) 'a * ''b * ('a -> ''b)
+    fun f(x, y, z) = z(x) = y;
+
+(b) 'a * 'a * int
+    fun f(x, y, z) = z + 1;
+
+(c) 'a list * 'b * 'a
+    fun f(x, y, z) = z::x;
+
+(d) ('a * 'b) * 'a list * 'b list
+    fun f((x1, x2), y, z) = (x1::y, x2::z);
+
