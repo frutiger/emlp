@@ -1,0 +1,7 @@
+Exercise 5.4.8
+
+What is the effect on a list L of reduce (op -, L)?
+
+The result is the sum of all the odd-indexed elements less the sum of all the
+even-indexed elements.
+

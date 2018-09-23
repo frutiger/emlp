@@ -1,0 +1,6 @@
+Exercise 5.4.10
+
+What is the effect of lreduce(op -, L)?
+
+The result is the first element less all the subsequent elements
+
