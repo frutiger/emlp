@@ -1,0 +1,24 @@
+Exercise 5.5.7
+
+It is actually quite easy to convert an n-parameter function, for fixed n, from
+Curried to uncurried form. Write the following higher-order functions that
+perform the translations.
+
+  (a) Given a function F that takes one parameter whose type is a product type
+      with n components, the function curry applied to F produces a function G
+      that takes n arguments in Curried form. G x1 x2 ... xn produces the same
+      value as F(x1, x2, ..., xn).
+
+      Not syntactically valid since 'n' is unknown:
+
+      fun curry F x1 x2 ... xn = F(x1, x2, ..., xn);
+
+  (b) Given a Curried function F that takes n parameters, the function uncurry
+      applied to F produces a function G that takes one parameter that is a
+      tuple with n components. G(x1,x2, ..., xn) produces the same value as F
+      x1 x2 ... xn.
+
+      Not syntactically valid since 'n' is unknown:
+
+      fun uncurry F(x1, x2, ..., xn) = F x1 x2 ... xn;
+
