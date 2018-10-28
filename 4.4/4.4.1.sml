@@ -45,17 +45,15 @@ end
 and sumInts(filename) = sumInts1(openIn(filename));
 *)
 
-open TextIO;
-
 fun digit(c) = c >= #"0" andalso c <= #"9";
 
 fun toint(c) = ord(c) - ord(#"0");
 
-fun startInt(file) = startInt1(file, input1(file))
+fun startInt(file) = startInt1(file, TextIO.input1(file))
 
 and startInt1(file, NONE)   = NONE
   | startInt1(file, SOME c) = if   c = #"-"
-                              then startInt2(file, ~1, input1(file))
+                              then startInt2(file, ~1, TextIO.input1(file))
                               else startInt2(file, 1,  SOME c)
 
 and startInt2(file, sign, NONE)   = NONE
@@ -64,7 +62,7 @@ and startInt2(file, sign, NONE)   = NONE
                                     else startInt(file);
 
 fun finishInt(NONE,           file) = NONE
-  | finishInt(SOME (sign, i), file) = finishInt1(sign, i, file, input1(file))
+  | finishInt(SOME (sign, i), file) = finishInt1(sign, i, file, TextIO.input1(file))
 
 and finishInt1(sign, i, file, NONE)   = SOME (sign * i)
   | finishInt1(sign, i, file, SOME c) = if   digit(c)
@@ -78,5 +76,5 @@ fun sumInts2(file, NONE)   = 0
 
 and sumInts1(file) = sumInts2(file, getInt(file))
 
-and sumInts(filename) = sumInts1(openIn(filename));
+and sumInts(filename) = sumInts1(TextIO.openIn(filename));
 

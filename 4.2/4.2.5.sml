@@ -38,8 +38,6 @@ Fig. 4.8 is reproduced below.
 
 *)
 
-open TextIO;
-
 fun printTabs(1) = print("\t")
   | printTabs(n) = (print("\t"); printTabs(n-1));
 

@@ -32,13 +32,11 @@ and finishInt1(i, file, NONE)   = i
 fun getInt(file) = finishInt(startInt(file), file);
 *)
 
-open TextIO;
-
 val END = ~1;
 
 fun digit(c) = c >= #"0" andalso c <= #"9";
 
-fun startInt(file) = startInt1(file, input1(file))
+fun startInt(file) = startInt1(file, TextIO.input1(file))
 
 and startInt1(file, NONE)   = END
   | startInt1(file, SOME c) = if digit(c)
@@ -48,7 +46,7 @@ and startInt1(file, NONE)   = END
 fun finishInt(i, file) =
   if   i = END
   then END
-  else case input1(file)
+  else case TextIO.input1(file)
        of   NONE   => i
           | SOME c => if   digit(c)
                       then finishInt(10 * i + ord(c) - ord(#"0"), file)

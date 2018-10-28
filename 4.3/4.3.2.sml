@@ -8,15 +8,12 @@ example, 570 in base 12 is 3(11)6; that is, 570 = 144*3 + 12*11 + 6.  You should
 read from an instream 'infile' and write to an outstream 'outfile'.
 *)
 
-open Int;
-open TextIO;
-
-fun readInt2(f, x, SOME d) = readInt1(f, x*10 + d, input1(f))
+fun readInt2(f, x, SOME d) = readInt1(f, x*10 + d, TextIO.input1(f))
   | readInt2(f, x, NONE)   = x
 and readInt1(f, x, SOME c) = readInt2(f, x, Int.fromString(str(c)))
   | readInt1(f, x, NONE)   = x;
 
-fun readInt(f) = readInt1(f, 0, input1(f));
+fun readInt(f) = readInt1(f, 0, TextIO.input1(f));
 
 fun convert1(0, base, divisor, result) = result
   | convert1(x, base, divisor, result) =
@@ -34,12 +31,12 @@ fun outputNum1(f, n) =
   if
     n < 10
   then
-    output(f, Int.toString(n))
+    TextIO.output(f, Int.toString(n))
   else
-    ( output1(f, #"("); output(f, Int.toString(n)); output1(f, #")") );
+    ( TextIO.output1(f, #"("); TextIO.output(f, Int.toString(n)); TextIO.output1(f, #")") );
 
 fun outputNum(f, n::ns) = (outputNum1(f, n); outputNum(f, ns))
-  | outputNum(f, nil)   = (output1(f, #"\n"));
+  | outputNum(f, nil)   = (TextIO.output1(f, #"\n"));
 
 fun program(instream, outstream) =
   outputNum(outstream, convert(readInt(instream), readInt(instream)))

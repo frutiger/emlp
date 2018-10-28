@@ -33,27 +33,25 @@ fun getInt(file) = finishInt(startInt(file), file);
 
 *)
 
-open TextIO;
-
 val END = ~1;
 
 fun digit(c) = c >= #"0" andalso c <= #"9";
 
-fun startInt(file) = startInt1(file, input1(file));
-
 fun startInt1(file, NONE)   = END
   | startInt1(file, SOME c) = if digit(c)
     then ord(c) - ord(#"0")
-    else startInt1(file, input1(file));
+    else startInt1(file, TextIO.input1(file));
 
-fun finishInt(i, file) = if i = END
-  then END
-  else finishInt1(i, file, input1(file));
+fun startInt(file) = startInt1(file, TextIO.input1(file));
 
 fun finishInt1(i, file, NONE)   = i
   | finishInt1(i, file, SOME c) = if digit(c)
-    then finishInt1(10 * i + ord(c) - ord(#"0"), file, input1(file))
+    then finishInt1(10 * i + ord(c) - ord(#"0"), file, TextIO.input1(file))
     else i;
+
+fun finishInt(i, file) = if i = END
+  then END
+  else finishInt1(i, file, TextIO.input1(file));
 
 fun getInt(file) = finishInt(startInt(file), file);
 

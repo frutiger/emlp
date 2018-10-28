@@ -11,8 +11,6 @@ fun padd(P,            nil)   = P
   | padd(nil,          Q)     = Q
   | padd((p:real)::ps, q::qs) = (p + q)::padd(ps, qs);
 *)
-open Real; (* needed so later 'open Int' doesn't shadow '+' *)
-
 val rec padd =
   fn (P,   nil)            => P
    | (nil, Q)              => Q
@@ -47,7 +45,6 @@ Function sumPairs of Example 3.18 is reproduced below.
 fun sumPairs(nil)       = 0.0
   | sumPairs((x,y)::zs) = x + y + sumPairs(zs);
 *)
-open Int; (* needed to provide integer + *)
 
 val rec sumPairs =
   fn nil        => 0

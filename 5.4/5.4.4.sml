@@ -18,7 +18,6 @@ fun trap(a,b,n,F) =
 *)
 
 
-open TextIO;
 exception BadInput of string;
 
 fun trap(a,b,n,F) =

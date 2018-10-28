@@ -7,8 +7,6 @@ a table with columns corresponding to values x and F(x), where x = a, a + d,
 a + 2d, ..., a + (n - 1)d.
 *)
 
-open TextIO;
-
 fun tabulate(x, d, 0, F:real -> real) = ()
   | tabulate(x, d, n, F) = (
       print(Real.toString(x));

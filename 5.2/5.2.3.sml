@@ -44,20 +44,18 @@ end
 and sumInts(filename) = sumInts1(openIn(filename));
 *)
 
-open TextIO;
-
 fun digit(c) = c >= #"0" andalso c <= #"9";
 
 exception Eof;
 
-fun startInt(file) = startInt1(file, input1(file))
+fun startInt(file) = startInt1(file, TextIO.input1(file))
 
 and startInt1(file, NONE)   = raise Eof
   | startInt1(file, SOME c) = if digit(c)
     then ord(c) - ord(#"0")
     else startInt(file);
 
-fun finishInt(i, file) = finishInt1(i, file, input1(file))
+fun finishInt(i, file) = finishInt1(i, file, TextIO.input1(file))
 
 and finishInt1(i, file, NONE)   = i
   | finishInt1(i, file, SOME c) = if digit(c)
@@ -71,5 +69,5 @@ fun sumInts1(file) = let val i = getInt(file)
                      end
                      handle Eof => 0
 
-and sumInts(filename) = sumInts1(openIn(filename));
+and sumInts(filename) = sumInts1(TextIO.openIn(filename));
 

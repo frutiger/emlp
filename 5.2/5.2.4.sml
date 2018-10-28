@@ -44,8 +44,6 @@ as vectors), we are performing the basic operation required by the pivotal
 condensation algorithm.
 *)
 
-open Real;
-
 exception DivZero;
 
 exception NonSquare;

@@ -12,10 +12,8 @@ fun makeList1(infile, NONE)   = nil
 fun makeList(infile) = makeList1(infile, input1(infile));
 *)
 
-open TextIO;
-
 fun makeList1(infile, NONE)   = nil
   | makeList1(infile, SOME c) = c :: makeList(infile)
 
-and makeList(infile) = makeList1(infile, input1(infile));
+and makeList(infile) = makeList1(infile, TextIO.input1(infile));
 
