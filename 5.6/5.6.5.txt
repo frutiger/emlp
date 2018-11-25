@@ -1,0 +1,44 @@
+Exercise 5.6.5
+
+Repeat Exercise 5.6.4 for the following expressions. The functions compA1 and
+compCompA1 are as defined in Exercises 5.6.4(a) and (b).  However, you should
+redeclare their type for the uses described below.
+
+a) val f = compA1 real;
+
+   where real is the built-in function that converts integers to equivalent
+   reals.
+
+   fun f x = real(add1(x)) : int -> real
+
+b) val compT = comp trunc;
+
+   where trunc is the built-in function that converts a real to an integer,
+   rounding towards 0 if necessary.
+
+   fun compT F x = comp trunc F x
+                 = F(trunc(x))
+   compT : (int -> 'a) -> real -> 'a
+   compT : (int -> int) -> real -> int
+
+c) val g = compCompA1 compT;
+
+   fun g F x = (comp (comp add1)) (comp trunc) F x
+             = comp trunc (comp add1 F) x
+             = (comp add1 F)(trunc(x))
+             = F(add1(trunc(x)))
+   F : int -> 'a
+   g : (int -> 'a) -> real -> 'a
+
+d) val h = g real;
+   fun h x = real(add1(trunc(x))) : real -> real
+
+e) f(2);
+   tycon mismatch
+
+f) h(3.5);
+   4.0
+
+g) h(~3.5);
+   ~2.0
+

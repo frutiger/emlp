@@ -1,0 +1,57 @@
+Exercise 5.6.4
+
+Suppose we define comp as in Fig. 5.20 and
+
+    fun add1 x = x+1;
+
+Fig. 5.20 is reproduced below:
+
+fun comp F G =
+  let
+    fun C x = G(F(x))
+  in
+    C
+  end;
+
+Give the type and value for each of the following functions or constants. To
+avoid a nongeneralizable type variable error as discussed in Exercise 5.6.3,
+you should declare all unknown types to be integers.
+
+a) val compA1 = comp add1;
+
+   fun compA1 F x = comp add1 F x
+                  = F(add1(x))
+                  = F(x + 1)
+   compA1 : (int -> 'a) -> int -> 'a
+   compA1 : (int -> int) -> int -> int
+
+b) val compCompA1 = comp compA1;
+
+   fun compCompA1 F G x = (comp (comp add1)) F G x
+                        = F (comp add1 G) x
+
+   G : (int -> 'a)
+   F : ((int -> 'a) -> 'b)
+   compCompA1 : ((int -> 'a) -> 'b) -> (int -> 'a) -> 'b
+   compCompA1 : ((int -> int) -> int) -> (int -> int) -> int
+
+c) val f = compA1 add1;
+
+   fun f x = add1(add1(x)) : int -> int
+
+d) f(2) = add1(add1(2)) = 4 : int
+
+e) val g = compCompA1 compA1;
+
+   fun g F x = (comp (comp add1)) (comp add1) F x
+             = comp add1 (comp add1 F) x
+             = (comp add1 F)(add1(x))
+             = F(add1(add1(x)))
+   F : int -> 'a
+   g : (int -> 'a) -> int -> 'a
+
+f) val h = g addl;
+   fun h x = add1(add1(add1(x))) : int -> int
+
+g) h(2) = 5 : int
+
