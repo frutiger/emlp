@@ -1,0 +1,15 @@
+Exercise 5.7.1: Give the grammatical diagram(s) for the form of real constants
+of ML as described in Section 2.1.1.
+
+INT: -->--[ 0-9 ]-->--
+         \       /
+          \--<--/
+
+SINT: -->---[ ~ ]--->--[ INT ]-->--
+          \       /
+           \-->--/
+
+REAL: -->--[ SINT ]-->--[ . ]-->--[ INT ]-->--[ eE ]-->--[ SINT ]-->--
+                    \                    /   \                   /
+                     \--------->--------/     \-------->--------/
+
