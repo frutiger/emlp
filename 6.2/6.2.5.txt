@@ -1,0 +1,24 @@
+Exercise 6.2.5
+
+Tell whether a type or a datatype declaration would be more suitable for the
+following. Give the appropriate declaration.
+
+a) A type whose values are the suits of a card deck.
+
+   datatype suit = Diamond | Heart | Spade | Club;
+
+b) A type whose elements are either lists of (only) integers or lists of (only)
+   reals.
+
+   datatype numbers = Ints of int list | Reals of real list
+
+c) A type whose values are "things," where a "thing" is either an integer or
+   a list of "things."
+
+   datatype 'a thing = Item of 'a | Items of 'a list
+
+d) A (parameterized) type whose values are pairs whose components can be
+   of any type, as long as they are of the same type.
+
+   type 'a pair = ('a * 'a);
+
