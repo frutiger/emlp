@@ -1,0 +1,29 @@
+Exercise 6.4.5
+
+The published solution to Exercise 6.4.4(b) runs in time proportional to the
+number of nodes of the tree. Explain why? Would it be linear-time if foldl were
+used in place of foldr? Hint: Recall that the time to perform a concatenation
+of lists is proportional to the length of the left argument, but independent of
+the right argument.
+
+Using 'foldr' expands as follows:
+
+  foldr (op @) [] [A, B, C] = A @ (B @ (C @ []))
+
+As the running time of each concatenation is proportional to the length of the
+left argument, the running time is proportional to
+
+  length(A) + length(B) + length(C)
+
+i.e. the number of nodes in the tree.
+
+Using 'foldl' instead would expand as follows:
+
+  foldl (op @) [] [A, B, C] = C @ (B @ (A @ []))
+
+As before, the running time would still be proportional to
+
+  length(A) + length(B) + length(C)
+
+i.e. the number of nodes in the tree.
+
