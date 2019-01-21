@@ -1,0 +1,7 @@
+Exercise 7.3.3: What happens in response to the ML code
+
+val i = 1;
+while i<10 do val i = i+1;
+
+Infinite loop since the binding for i in the predicate is captured as 1.  New
+bindings are created but they do not affect the binding that was captured.
