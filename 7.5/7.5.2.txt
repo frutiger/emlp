@@ -1,0 +1,9 @@
+Exercise 7.5.2
+
+Is your solution to Exercise 7.5.1 more efficient than the list-based solution
+requested in Exercise 5.2.4? Why or why not?
+
+Both solutions are equivalent as they perform the same number of arithmetic
+operations and all the list operations used in the solution to Exercise 5.2.4
+are constant time, just like the array operations.
+
