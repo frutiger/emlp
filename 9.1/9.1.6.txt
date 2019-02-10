@@ -1,0 +1,8 @@
+Exercise 9.1.6
+
+Let E1 and E2 be ML expressions. Explain the difference between E1 before E2
+and (E1; E2).
+
+E1 before E2 evaluates to E1.
+(E1; E2) evaluates to E2.
+

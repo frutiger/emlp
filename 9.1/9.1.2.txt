@@ -1,0 +1,20 @@
+Exercise 9.1.2
+
+Suggest a way to redefine the precedence and/or associativity of + and * so
+that
+
+a) a + b * c is interpreted as (a + b) * c, and a * b + c is interpreted as
+   (a * b) + c.
+
+infix 7 +
+
+This causes + and * to have the same precedence, and since they are
+left-associative, the desired result is obtained.
+
+b) a + b * c + d is interpreted as a + ((b * c) + d).
+
+infixr 6 +
+
+This leaves * to have a higher precedence, but + will now associate (b * c)
+with d before it does so with a.
+

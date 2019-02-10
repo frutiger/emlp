@@ -1,0 +1,20 @@
+Exercise 9.1.1
+
+The relevant parts of Fig 9.2 is reproduced below:
+
+datatype 'a btree = T of 'a btree * 'a btree |
+                    Leaf of 'a;
+infix 2 T;
+
+If we instead define infixr 3 T at line (3) of Fig. 9.2, would
+the interpretation change for
+
+a) val t = Leaf(1) T Leaf(2) T Leaf(3);
+
+Yes, we would get T(Leaf(1), T(Leaf(2), Leaf(3))).
+
+b) val t = Leaf(1) T (Leaf(2) T Leaf(3) T (Leaf(4) T Leaf(5)));
+
+Yes, we would get T(Leaf(1), T(Leaf(2), T(Leaf(3), T(Leaf(4), Leaf(5))))).
+
+
