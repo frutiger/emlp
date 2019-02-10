@@ -1,0 +1,7 @@
+Exercise 9.2.7
+
+What is the difference between the functions app print and map print?
+
+app print returns unit, while map print returns a list of units of length of
+its argument.
+
