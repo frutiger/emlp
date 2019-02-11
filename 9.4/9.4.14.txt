@@ -1,0 +1,16 @@
+Exercise 9.4.14
+
+Find the value of the following:
+
+a) Time.fromReal 1.234.
+TIME {usec=1234000}
+
+b) Time.fromReal 10.5.
+TIME {usec=10500000}
+
+c) Time.toReal {sec=3, usec=200}.
+3.2
+
+d) Time.toReal {sec=0, usec=123456}.
+0.123456
+

@@ -1,0 +1,16 @@
+Exercise 9.4.9
+
+If L is the list [0, 1, 4, 9, 16, 25, 36], give the value of the following:
+
+a) List.take(L, 4).
+[0, 1, 4, 9]
+
+b) List.drop(L, 4).
+[16, 25, 36]
+
+c) List.nth(L, 1).
+1
+
+d) List.nth(L, 4).
+16
+

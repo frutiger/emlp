@@ -1,0 +1,30 @@
+Exercise 9.4.3: Find the values of the following expressions involving words.
+When necessary, assume that words are 31 bits long.
+
+a) Word.toInt 0wxABC.
+2748 (256*10 + 16*11 + 12)
+
+b) Word.fromInt ~20.
+0x7FFFFFEC (2^31 - 20 + 1)
+
+c) Word.toIntX 0wx40000003.
+~1073741821 (2 ** 31 - 3)
+
+d) Word.<<(0wxFF, 0w3).
+0wx7F8
+
+e) Word.>>(0wxFF, 0w3).
+0wx1F
+
+f) Word.~>>(0wxFF, 0w3).
+0wx1F
+
+g) Word.andb(0w12, 0w5).
+0wx4 (1100 & 0101 = 0100)
+
+h) Word.orb(0w12, 0w5).
+0wxD (1100 | 0101 = 1101)
+
+i) Word.xorb(0w12, 0w5).
+0wx9 (1100 ^ 0101 = 1001)
+

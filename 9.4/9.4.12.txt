@@ -1,0 +1,14 @@
+Exercise 9.4.12
+
+Let V be the vector #[0,1,4,9,16,25,36]. Give the values of the following
+expressions:
+
+a) Vector.extract(V, 1, SOME 5).
+#[1, 4, 9, 16, 25]
+
+b) Vector.extract(V, 1, NONE).
+#[1, 4, 9, 16, 25, 36]
+
+c) Vector.extract(V, 3, SOME 2).
+#[9, 16]
+
