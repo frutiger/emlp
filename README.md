@@ -5,6 +5,8 @@ Programming](#ullman98).  These solutions are either in text (encoded as UTF-8)
 or as [SML programs](https://www.smlnj.org/) in [Standard ML '97](#milner97)
 form.
 
+The solutions are currently 100% complete, but were only manually tested.
+
 ## References
 
 <a name="ullman98"/>
